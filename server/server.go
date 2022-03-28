@@ -20,5 +20,8 @@ func main()  {
 	_ = rpc.RegisterName("HelloService", &HelloService{})
 	conn, _ := listener.Accept()
 	rpc.ServeConn(conn)
+
+	// 替换 rpc 序列化协议为 json
+	//rpc.ServeCodec(jsonrpc.NewServerCodec(conn))
 }
 
