@@ -22,10 +22,20 @@ func customer(channel <- chan string)  {
 	}
 }
 
+type IntSlice []int
+
+func (p IntSlice) Len() int           { return len(p) }
+func (p IntSlice) Less(i, j int) bool { return p[i] < p[j] }
+func (p IntSlice) Swap(i, j int)      { p[i], p[j] = p[j], p[i] }
+
 func main()  {
-	channel := make(chan string)
-	go producer("cat", channel)
-	go producer("dog", channel)
-	go customer(channel)
-	time.Sleep(time.Second * 5)
+	//channel := make(chan string)
+	//go producer("cat", channel)
+	//go producer("dog", channel)
+	//go customer(channel)
+	var str = `sdsddds
+dsdsdsdsdsdsds
+dsdsdsdsdsdds`
+	fmt.Println(str)
+	//time.Sleep(time.Second * 5)
 }
