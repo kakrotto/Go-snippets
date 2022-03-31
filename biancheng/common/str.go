@@ -1,3 +1,6 @@
+/*
+字符串相关操作示例
+*/
 package main
 
 import (
@@ -13,8 +16,8 @@ import (
 // Go 语言的字符串都以 UTF-8 格式保存，每个中文占用 3 个字节
 
 func LenStr(s string) int {
-	// ASCII 字符串长度使用 len() 函数。
-	// Unicode 字符串长度使用 utf8.RuneCountInString() 函数。
+	/* ASCII 字符串长度使用 len() 函数。
+	   Unicode 字符串长度使用 utf8.RuneCountInString() 函数。*/
 	return utf8.RuneCountInString(s)
 }
 
