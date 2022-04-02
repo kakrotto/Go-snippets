@@ -6,21 +6,20 @@ import (
 )
 
 type ListNode struct {
-	val int
-	next *ListNode
+	Val  int
+	Next *ListNode
 }
 
 func reverseLinkedList(head *ListNode) *ListNode {
 	var pre *ListNode
-	for head != nil{
-		nextNode := head.next
-		head.next = pre
+	for head != nil {
+		nextNode := head.Next
+		head.Next = pre
 		pre = head
 		head = nextNode
 	}
 	return pre
 }
-
 
 //定义错误常量
 const (
